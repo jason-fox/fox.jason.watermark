@@ -1,4 +1,5 @@
-# Watermark Plugin for DITA-OT
+# Watermark Plugin for DITA-OT [<img src="https://jason-fox.github.io/fox.jason.watermark/watermark.png" align="right" width="300">](http://watermarkdita-ot.rtfd.io/)
+
 
 [![license](https://img.shields.io/github/license/jason-fox/fox.jason.watermark.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 [![DITA-OT 3.6](https://img.shields.io/badge/DITA--OT-3.6-blue.svg)](http://www.dita-ot.org/3.6)
@@ -6,6 +7,8 @@
 
 This is a [DITA-OT Plug-in](https://www.dita-ot.org/plugins) to add a watermark to generated PDF files. The plugin
 extends standard PDF processing. It offers an extension-point for further processing.
+
+> ![](https://jason-fox.github.io/fox.jason.watermark/watermark-pdf.png)
 
 <details>
 <summary><strong>Table of Contents</strong></summary>
