@@ -2,7 +2,7 @@
 
 The plugin extends standard PDF processing:
 
-```console
+```bash
 PATH_TO_DITA_OT/bin/dita -f pdf -o out -i document.ditamap --pdf.watermark=draft|review|final
 ```
 
