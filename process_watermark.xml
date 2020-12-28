@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><!--ant--><!--
+	This file is part of the DITA-OT Watermark Plug-in project.
+	See the accompanying LICENSE file for applicable licenses.
+--><project xmlns:if="ant:if" xmlns:dita="http://dita-ot.sourceforge.net" name="fox.jason.watermark">
+
+	<!--
+		Default to draft
+	-->
+	<target name="watermark.init" depends="watermark.auth">
+		<property name="pdf.watermark" value="draft"/>
+	</target>
+
+	<!--
+		Copy over watermark image
+	-->
+	<target name="watermark.process">
+		
+		<tempfile deleteonexit="true" destdir="${dita.temp.dir}" property="watermark.file"/>
+		<pipeline message="Create watermark image" taskname="gen-watermark">
+			<xslt classpathref="dost.class.path" style="${dita.plugin.fox.jason.watermark.dir}/xsl/${pdf.watermark}.xsl" in="${dita.plugin.fox.jason.watermark.dir}/resource/dummy.xml" out="${watermark.file}">
+			</xslt>
+			<param name="defaultLanguage" expression="${default.language}"/>
+		</pipeline>
+		<copy tofile="${dita.temp.dir}/Configuration/OpenTopic/cfg/common/artwork/watermark.svg" file="${watermark.file}"/>
+
+	</target>
+	<target name="watermark" depends="watermark.init,watermark.process"/>
+</project>

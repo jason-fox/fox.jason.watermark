@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?>
+<!--
+	This file is part of the DITA-OT Watermark Plug-in project.
+	See the accompanying LICENSE file for applicable licenses.
+-->
+<plugin id="fox.jason.watermark" version="1.0.1">
+
+	<feature extension="ant.import" file="process_watermark.xml"/>
+	<!-- Uses the default depend.preprocess.post extension point -->
+	<feature extension="depend.org.dita.pdf2.init.pre" value="watermark"/>
+	<!-- PDF extension point -->
+	<feature extension="dita.xsl.xslfo" value="xsl/xslfo.xsl" type="file"/>
+	<feature extension="dita.xsl.strings" file="cfg/common/vars/strings.xml"/>
+	<require plugin="org.dita.base"/>
+
+	<!-- Offers an additional extension points for dependent plug-ins -->
+	<extension-point id="watermark.pre" name="Extend watermark pre-processing"/>
+	
+	<transtype name="pdf" desc="PDF">
+		<param name="pdf.watermark" desc="The name of the watermark to use on the PDF document" type="string"/>
+	</transtype>
+
+	<!-- Add a template file to enable overrides to use extension points -->
+  <template file="process_watermark_template.xml"/>
+</plugin>

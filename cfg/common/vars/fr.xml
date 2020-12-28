@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This file is part of the DITA Validator project.
+  See the accompanying LICENSE file for applicable licenses.
+-->
+<strings xml:lang="fr">
+	<str name="Draft">brouillon</str>
+	<str name="Final">final</str>
+	<str name="Document">de document</str>
+	<str name="Copy for">copie pour</str>
+	<str name="Review Only">examen uniquement</str>
+</strings>
