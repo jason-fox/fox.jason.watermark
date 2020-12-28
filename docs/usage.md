@@ -72,3 +72,6 @@ The following `plugin.xml` will enable the watermarking of PDF files to depend o
   </target>
 </project>
 ```
+
+A working example can be found in the
+[Authorized Watermark DITA-OT plug-in](https://github.com/jason-fox/fox.jason.watermark.auth)
