@@ -19,7 +19,7 @@ The DITA-OT Watermark plug-in is a plug-in for the DITA Open Toolkit.
 
     This defines the necessary environment variable to run the `dita` command from the command line.
 
-```console
+```bash
 curl -LO https://github.com/dita-ot/dita-ot/releases/download/3.6/dita-ot-3.6.zip
 unzip -q dita-ot-3.6.zip
 rm dita-ot-3.6.zip
@@ -29,7 +29,7 @@ rm dita-ot-3.6.zip
 
 -   Run the plug-in installation commands:
 
-```console
+```bash
 dita install https://github.com/jason-fox/fox.jason.watermark/archive/master.zip
 ```
 
