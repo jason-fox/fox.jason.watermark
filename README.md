@@ -22,7 +22,7 @@ extends standard PDF processing. It offers an extension-point for further proces
 
 ## Install
 
-The DITA-OT Water plug-in has been tested against [DITA-OT 3.x](http://www.dita-ot.org/download). It is recommended that
+The DITA-OT Watermark plug-in has been tested against [DITA-OT 3.x](http://www.dita-ot.org/download). It is recommended that
 you upgrade to the latest version.
 
 ### Installing DITA-OT
