@@ -10,12 +10,8 @@
 	version="2.0">
 
 	<xsl:import href="../cfg/fo/attrs/watermark-attr.xsl"/>
-
 	<xsl:import href="plugin:org.dita.base:xsl/common/dita-utilities.xsl"/>
 	<xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/>
-
-	<xsl:variable name="msgprefix" select="'DOTX'"/>
-	<xsl:param name="DEFAULTLANG">en-us</xsl:param>
 
 	<xsl:template match="/">
 		<xsl:text disable-output-escaping="yes">

@@ -6,7 +6,7 @@
 	<!--
 		Default to draft
 	-->
-	<target name="watermark.init" depends="watermark.auth">
+	<target name="watermark.init" depends="">
 		<property name="pdf.watermark" value="draft"/>
 	</target>
 
@@ -18,8 +18,8 @@
 		<tempfile deleteonexit="true" destdir="${dita.temp.dir}" property="watermark.file"/>
 		<pipeline message="Create watermark image" taskname="gen-watermark">
 			<xslt classpathref="dost.class.path" style="${dita.plugin.fox.jason.watermark.dir}/xsl/${pdf.watermark}.xsl" in="${dita.plugin.fox.jason.watermark.dir}/resource/dummy.xml" out="${watermark.file}">
+				<param name="defaultLanguage" expression="${default.language}" if="default.language"/>
 			</xslt>
-			<param name="defaultLanguage" expression="${default.language}"/>
 		</pipeline>
 		<copy tofile="${dita.temp.dir}/Configuration/OpenTopic/cfg/common/artwork/watermark.svg" file="${watermark.file}"/>
 
