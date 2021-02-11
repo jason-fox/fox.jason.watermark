@@ -1,6 +1,7 @@
 **/out/**
 **/temp/**
 **/tmp/**
+process_watermark.xml
 
 .scannerwork/
 
