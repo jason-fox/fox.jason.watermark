@@ -1,0 +1,3 @@
+test/** linguist-vendored
+
+process_watermark_template.xml linguist-language=Ant-Build-System
