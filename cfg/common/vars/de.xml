@@ -4,7 +4,7 @@
   See the accompanying LICENSE file for applicable licenses.
 -->
 <strings xml:lang="de">
-	<str name="Draft"></str>
+	<str name="Draft"/>
 	<str name="Final">ENDGÜLTIG</str>
 	<str name="Document">Dokumententwurf</str>
 	<str name="Copy for">Nur zur</str>

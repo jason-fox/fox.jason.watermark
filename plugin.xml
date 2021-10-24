@@ -18,7 +18,11 @@
 	<extension-point id="watermark.pre" name="Extend watermark pre-processing"/>
 	
 	<transtype name="pdf" desc="PDF">
-		<param name="pdf.watermark" desc="The name of the watermark to use on the PDF document" type="string"/>
+		<param
+      name="pdf.watermark"
+      desc="The name of the watermark to use on the PDF document"
+      type="string"
+    />
 	</transtype>
 
 	<!-- Add a template file to enable overrides to use extension points -->
