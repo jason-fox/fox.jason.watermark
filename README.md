@@ -142,4 +142,4 @@ A working example can be found in the
 
 ## License
 
-[Apache 2.0](LICENSE) © 2021 Jason Fox
+[Apache 2.0](LICENSE) © 2021 - 2022 Jason Fox
