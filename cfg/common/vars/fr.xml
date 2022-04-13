@@ -3,10 +3,10 @@
   This file is part of the DITA Validator project.
   See the accompanying LICENSE file for applicable licenses.
 -->
-<strings xml:lang="fr">
-	<str name="Draft">brouillon</str>
-	<str name="Final">final</str>
-	<str name="Document">de document</str>
-	<str name="Copy for">copie pour</str>
-	<str name="Review Only">examen uniquement</str>
-</strings>
+<variables xml:lang="fr">
+	<variable id="Draft">brouillon</variable>
+	<variable id="Final">final</variable>
+	<variable id="Document">de document</variable>
+	<variable id="Copy for">copie pour</variable>
+	<variable id="Review Only">examen uniquement</variable>
+</variables>

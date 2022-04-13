@@ -3,10 +3,10 @@
   This file is part of the DITA Validator project.
   See the accompanying LICENSE file for applicable licenses.
 -->
-<strings xml:lang="de">
-	<str name="Draft"/>
-	<str name="Final">ENDGÜLTIG</str>
-	<str name="Document">Dokumententwurf</str>
-	<str name="Copy for">Nur zur</str>
-	<str name="Review Only">Überprüfung</str>
-</strings>
+<variables xml:lang="de">
+	<variable id="Draft"/>
+	<variable id="Final">ENDGÜLTIG</variable>
+	<variable id="Document">Dokumententwurf</variable>
+	<variable id="Copy for">Nur zur</variable>
+	<variable id="Review Only">Überprüfung</variable>
+</variables>
