@@ -11,7 +11,6 @@
 	<feature extension="depend.org.dita.pdf2.init.pre" value="watermark"/>
 	<!-- PDF extension point -->
 	<feature extension="dita.xsl.xslfo" value="xsl/xslfo.xsl" type="file"/>
-	<feature extension="dita.xsl.strings" file="cfg/common/vars/strings.xml"/>
 	<require plugin="org.dita.base"/>
 
 	<!-- Offers an additional extension points for dependent plug-ins -->
@@ -19,11 +18,46 @@
 	
 	<transtype name="pdf" desc="PDF">
 		<param
-      name="pdf.watermark"
-      desc="The name of the watermark to use on the PDF document"
-      type="string"
-    />
+			name="pdf.watermark"
+			desc="The name of the watermark to use on the PDF document"
+			type="enum">
+			<val default="true">draft</val>
+			<val>review</val>
+			<val>final</val>
+			<val>none</val>
+		</param>
 	</transtype>
+
+	<param
+      name="pdf.watermark.width"
+      type="string"
+      desc="Width of the watermark"
+    />
+     <param
+      name="pdf.watermark.height"
+      type="string"
+      desc="Height of the watermark"
+    />
+     <param
+      name="pdf.watermark.color"
+      type="string"
+      desc="Color of the watermark"
+    />
+     <param
+      name="pdf.watermark.fontsize"
+      type="string"
+      desc="Fontsize of the watermark text"
+    />
+     <param
+      name="pdf.watermark.text1"
+      type="string"
+      desc="First line of watermark text"
+    />
+     <param
+      name="pdf.watermark.text2"
+      type="string"
+      desc="Second line of watermark text"
+    />
 
 	<!-- Add a template file to enable overrides to use extension points -->
   <template file="process_watermark_template.xml"/>

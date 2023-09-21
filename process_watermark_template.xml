@@ -19,6 +19,11 @@
     dita:extension="depends org.dita.dost.platform.InsertDependsAction"
   >
 		<property name="pdf.watermark" value="draft"/>
+		<property name="pdf.watermark.width" value="120" />
+    <property name="pdf.watermark.height" value="120" />
+    <property
+      file="${dita.plugin.fox.jason.watermark.dir}/cfg/${pdf.watermark}.properties"
+    />
 	</target>
 
 	<!--
@@ -31,20 +36,19 @@
       destdir="${dita.temp.dir}"
       property="watermark.file"
     />
-		<pipeline message="Create watermark image" taskname="gen-watermark">
-			<xslt
-        classpathref="dost.class.path"
-        style="${dita.plugin.fox.jason.watermark.dir}/xsl/${pdf.watermark}.xsl"
-        in="${dita.plugin.fox.jason.watermark.dir}/resource/dummy.xml"
-        out="${watermark.file}"
-      >
-				<param
-          name="defaultLanguage"
-          expression="${default.language}"
-          if:set="default.language"
-        />
-			</xslt>
-		</pipeline>
+
+    <copy
+      tofile="${watermark.file}"
+      file="${dita.plugin.fox.jason.watermark.dir}/resource/${pdf.watermark}.svg"
+    />
+
+    <replace file="${watermark.file}" token="@@@width@@@" value="${pdf.watermark.width}"/>
+    <replace file="${watermark.file}" token="@@@height@@@" value="${pdf.watermark.height}"/>
+    <replace file="${watermark.file}" token="@@@text1@@@" value="${pdf.watermark.text1}"/>
+    <replace file="${watermark.file}" token="@@@text2@@@" value="${pdf.watermark.text2}"/>
+    <replace file="${watermark.file}" token="@@@color@@@" value="${pdf.watermark.color}"/>
+    <replace file="${watermark.file}" token="@@@fontsize@@@" value="${pdf.watermark.fontsize}"/>
+
 		<copy
       tofile="${dita.temp.dir}/Configuration/OpenTopic/cfg/common/artwork/watermark.svg"
       file="${watermark.file}"
