@@ -11,14 +11,14 @@
 >
 
 	<!--
-		Default to draft
+		Default to none
 	-->
 	<target
     name="watermark.init"
     dita:depends="{watermark.pre}"
     dita:extension="depends org.dita.dost.platform.InsertDependsAction"
   >
-		<property name="pdf.watermark" value="draft"/>
+		<property name="pdf.watermark" value="none"/>
 		<property name="pdf.watermark.width" value="120" />
     <property name="pdf.watermark.height" value="120" />
     <property
