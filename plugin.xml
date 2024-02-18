@@ -1,64 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="dita-ot/plugin.rnc" type="application/relax-ng-compact-syntax"?>
 <!--
-	This file is part of the DITA-OT Watermark Plug-in project.
-	See the accompanying LICENSE file for applicable licenses.
+    This file is part of the DITA-OT Watermark Plug-in project.
+    See the accompanying LICENSE file for applicable licenses.
 -->
 <plugin id="fox.jason.watermark" version="2.0.0">
 
-	<feature extension="ant.import" file="process_watermark.xml"/>
-	<!-- Uses the default depend.preprocess.post extension point -->
-	<feature extension="depend.org.dita.pdf2.init.pre" value="watermark"/>
-	<!-- PDF extension point -->
-	<feature extension="dita.xsl.xslfo" value="xsl/xslfo.xsl" type="file"/>
-	<require plugin="org.dita.base"/>
+    <feature extension="ant.import" file="process_watermark.xml"/>
+    <!-- Uses the default depend.preprocess.post extension point -->
+    <feature extension="depend.org.dita.pdf2.init.pre" value="watermark"/>
+    <!-- PDF extension point -->
+    <feature extension="dita.xsl.xslfo" value="xsl/xslfo.xsl" type="file"/>
+    <require plugin="org.dita.base"/>
 
-	<!-- Offers an additional extension points for dependent plug-ins -->
-	<extension-point id="watermark.pre" name="Extend watermark pre-processing"/>
-	
-	<transtype name="pdf" desc="PDF">
-		<param
-			name="pdf.watermark"
-			desc="The name of the watermark to use on the PDF document"
-			type="enum">
-			<val default="true">draft</val>
-			<val>review</val>
-			<val>final</val>
-			<val>none</val>
-		</param>
-	</transtype>
+    <!-- Offers an additional extension points for dependent plug-ins -->
+    <extension-point id="watermark.pre" name="Extend watermark pre-processing"/>
+    
+    <transtype name="pdf" desc="PDF">
+        <param
+            name="pdf.watermark"
+            desc="The name of the watermark to use on the PDF document"
+            type="enum">
+            <val>draft</val>
+            <val>review</val>
+            <val>final</val>
+            <val default="true">none</val>
+        </param>
+        <param
+          name="pdf.watermark.width"
+          type="string"
+          desc="Width of the watermark"
+        />
+         <param
+          name="pdf.watermark.height"
+          type="string"
+          desc="Height of the watermark"
+        />
+         <param
+          name="pdf.watermark.color"
+          type="string"
+          desc="Color of the watermark"
+        />
+         <param
+          name="pdf.watermark.fontsize"
+          type="string"
+          desc="Override the font size of the watermark text"
+        />
+         <param
+          name="pdf.watermark.text1"
+          type="string"
+          desc="Override the first line of watermark text"
+        />
+         <param
+          name="pdf.watermark.text2"
+          type="string"
+          desc="Override the second line of watermark text"
+        />
+    </transtype>
 
-	<param
-      name="pdf.watermark.width"
-      type="string"
-      desc="Width of the watermark"
-    />
-     <param
-      name="pdf.watermark.height"
-      type="string"
-      desc="Height of the watermark"
-    />
-     <param
-      name="pdf.watermark.color"
-      type="string"
-      desc="Color of the watermark"
-    />
-     <param
-      name="pdf.watermark.fontsize"
-      type="string"
-      desc="Fontsize of the watermark text"
-    />
-     <param
-      name="pdf.watermark.text1"
-      type="string"
-      desc="First line of watermark text"
-    />
-     <param
-      name="pdf.watermark.text2"
-      type="string"
-      desc="Second line of watermark text"
-    />
-
-	<!-- Add a template file to enable overrides to use extension points -->
+    <!-- Add a template file to enable overrides to use extension points -->
   <template file="process_watermark_template.xml"/>
 </plugin>

@@ -2,7 +2,7 @@
 
 
 [![license](https://img.shields.io/github/license/jason-fox/fox.jason.watermark.svg)](http://www.apache.org/licenses/LICENSE-2.0)
-[![DITA-OT 3.7](https://img.shields.io/badge/DITA--OT-3.7-blue.svg)](http://www.dita-ot.org/3.7)
+[![DITA-OT 4.2](https://img.shields.io/badge/DITA--OT-4.2-green.svg)](http://www.dita-ot.org/4.2)
 [![Documentation Status](https://readthedocs.org/projects/watermarkdita-ot/badge/?version=latest)](https://watermarkdita-ot.readthedocs.io/en/latest/?badge=latest)
 
 This is a [DITA-OT Plug-in](https://www.dita-ot.org/plugins) to add a watermark to generated PDF files. The plugin
@@ -35,9 +35,9 @@ you upgrade to the latest version.
 The DITA-OT Watermark plug-in is a plug-in for the DITA Open Toolkit.
 
 -   Full installation instructions for downloading DITA-OT can be found
-    [here](https://www.dita-ot.org/3.7/topics/installing-client.html).
+    [here](https://www.dita-ot.org/4.2/topics/installing-client.html).
 
-    1.  Download the `dita-ot-3.7.zip` package from the project website at
+    1.  Download the `dita-ot-4.2.zip` package from the project website at
         [dita-ot.org/download](https://www.dita-ot.org/download)
     2.  Extract the contents of the package to the directory where you want to install DITA-OT.
     3.  **Optional**: Add the absolute path for the `bin` directory to the _PATH_ system variable.
@@ -45,9 +45,9 @@ The DITA-OT Watermark plug-in is a plug-in for the DITA Open Toolkit.
     This defines the necessary environment variable to run the `dita` command from the command line.
 
 ```console
-curl -LO https://github.com/dita-ot/dita-ot/releases/download/3.7/dita-ot-3.7.zip
-unzip -q dita-ot-3.7.zip
-rm dita-ot-3.7.zip
+curl -LO https://github.com/dita-ot/dita-ot/releases/download/4.2/dita-ot-4.2.zip
+unzip -q dita-ot-4.2.zip
+rm dita-ot-4.2.zip
 ```
 
 ### Installing the Plug-in
@@ -75,10 +75,16 @@ By default the output PDF will be watermarked as a **DRAFT**
 ### Parameter Reference
 
 -   `pdf.watermark` - Decides which watermark to use:
-    -   `draft` - Adds a watermark stating **DRAFT DOCUMENT**
+    -   `draft` - Adds a watermark stating _Draft Document_
     -   `review` - Adds a watermark stating _Copy for review only_
-    -   `final` - Adds an invisible watermark
-    -   `none` - Does not add a watermark
+    -   `final` - Adds an invisible watermark with transparent text
+    -   `none` - Does not add a watermark **DEFAULT*
+-   `pdf.watermark.width` - Width of the watermark
+-   `pdf.watermark.height` - Height of the watermark
+-   `pdf.watermark.color` - Color of the watermark
+-   `pdf.watermark.fontsize` - Override the font size of the watermark text
+-   `pdf.watermark.text1` - Override the first line of watermark text
+-   `pdf.watermark.text2` - Override the second line of watermark text
 
 ### Extension points
 
@@ -142,4 +148,4 @@ A working example can be found in the
 
 ## License
 
-[Apache 2.0](LICENSE) © 2021 - 2022 Jason Fox
+[Apache 2.0](LICENSE) © 2021 - 2024 Jason Fox
